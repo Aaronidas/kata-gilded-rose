@@ -6,11 +6,11 @@
  * Time: 12:38
  */
 
-namespace Kata\Operations;
+namespace Kata\QualityCommands;
 
 use Kata\Item\Item;
 
-class OperationsStrategy
+class QualityStrategy
 {
     /**
      * @var array

@@ -9,7 +9,7 @@
 namespace Kata\Factory;
 
 use Kata\DayCommands\DayStrategyBuilder;
-use Kata\Operations\OperationsStrategyBuilder;
+use Kata\QualityCommands\OperationsStrategyBuilder;
 
 class BasicFactory extends OperationsFactory
 {

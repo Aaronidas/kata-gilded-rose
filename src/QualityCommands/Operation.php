@@ -6,7 +6,7 @@
  * Time: 11:47
  */
 
-namespace Kata\Operations;
+namespace Kata\QualityCommands;
 
 use Kata\Item\Item;
 

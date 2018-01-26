@@ -6,11 +6,11 @@
  * Time: 11:49
  */
 
-namespace Kata\Operations;
+namespace Kata\QualityCommands;
 
 use Kata\Item\Item;
 
-abstract class AbstractOperation implements Operation
+abstract class AbstractQualityCommand implements Operation
 {
 
     const MAX_QUALITY = 50;

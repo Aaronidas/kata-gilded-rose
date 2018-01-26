@@ -6,11 +6,11 @@
  * Time: 11:48
  */
 
-namespace Kata\Operations;
+namespace Kata\QualityCommands;
 
 use Kata\Item\Item;
 
-class IncreaseOperation extends AbstractOperation
+class IncreaseQualityCommand extends AbstractQualityCommand
 {
     public function execute(Item $item)
     {
