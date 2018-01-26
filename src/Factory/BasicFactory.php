@@ -8,17 +8,19 @@
 
 namespace Kata\Factory;
 
+use Kata\DayCommands\DayStrategy;
 use Kata\DayCommands\DayStrategyBuilder;
 use Kata\QualityCommands\OperationsStrategyBuilder;
+use Kata\QualityCommands\QualityStrategy;
 
 class BasicFactory extends OperationsFactory
 {
-    public function getQualityOperationsStrategy()
+    public function getQualityOperationsStrategy(): QualityStrategy
     {
         return (new OperationsStrategyBuilder())->build();
     }
 
-    public function getDaysOperationStrategy()
+    public function getDaysOperationStrategy(): DayStrategy
     {
         return (new DayStrategyBuilder())->build();
     }

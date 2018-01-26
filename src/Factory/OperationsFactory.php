@@ -8,11 +8,12 @@
 
 namespace Kata\Factory;
 
+use Kata\DayCommands\DayStrategy;
 use Kata\QualityCommands\QualityStrategy;
 
 abstract class OperationsFactory
 {
-    public abstract function getQualityOperationsStrategy();
+    public abstract function getQualityOperationsStrategy(): QualityStrategy;
 
-    public abstract function getDaysOperationStrategy();
+    public abstract function getDaysOperationStrategy(): DayStrategy;
 }
