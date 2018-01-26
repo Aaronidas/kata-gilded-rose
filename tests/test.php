@@ -14,7 +14,7 @@ class GildedRoseTest extends TestCase {
         $items = array(new \Kata\Item\Item("foo", 0, 0));
         $gildedRose = new GildedRose($items);
         $gildedRose->update_quality();
-        $this->assertEquals("fixme", $items[0]->name);
+        $this->assertEquals("foo", $items[0]->name);
     }
 
 }
