@@ -20,6 +20,6 @@ class OperationsStrategyBuilder
         $operations['Conjured Mana Cake'] = new DoubleDecreaseQualityCommand();
         $operations['default'] = new DefaultQualityCommand();
 
-        return new QualityStrategy($operations);
+        return new QualityStrategyFromCommands($operations);
     }
 }

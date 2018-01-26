@@ -17,6 +17,6 @@ class DayStrategyBuilder
         $commands['Sulfuras, Hand of Ragnaros'] = new VoidDayCommand();
         $commands['default'] = new DecreaseDayCommand();
 
-        return new DayStrategy($commands);
+        return new DayStrategyFromCommands($commands);
     }
 }
