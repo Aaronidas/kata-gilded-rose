@@ -13,10 +13,14 @@ use Kata\Item\ItemFacade;
 
 class GildedRose
 {
+    /** @var ItemFacade[] $items */
     private $items;
 
     function __construct($items) {
-        $this->items = $items;
+        $this->items = [];
+        foreach ($items as $theItem) {
+            $this->items[] = new ItemFacade($theItem);
+        }
     }
 
     function update_quality()
@@ -26,9 +30,8 @@ class GildedRose
         $qualityStrategy = $factory->getQualityOperationsStrategy();
 
         foreach ($this->items as $item) {
-            $facade = new ItemFacade($item);
-            $daysStrategy->execute($facade);
-            $qualityStrategy->execute($facade);
+            $daysStrategy->execute($item);
+            $qualityStrategy->execute($item);
         }
     }
 
