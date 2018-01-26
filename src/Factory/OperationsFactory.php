@@ -8,6 +8,8 @@
 
 namespace Kata\Factory;
 
+use Kata\QualityCommands\QualityStrategy;
+
 abstract class OperationsFactory
 {
     public abstract function getQualityOperationsStrategy();

@@ -10,6 +10,7 @@ namespace Kata;
 
 use Kata\Factory\BasicFactory;
 use Kata\Item\ItemFacade;
+use Kata\Item\UpdateItemStrategy;
 
 class GildedRose
 {
@@ -25,13 +26,10 @@ class GildedRose
 
     function update_quality()
     {
-        $factory = new BasicFactory();
-        $daysStrategy = $factory->getDaysOperationStrategy();
-        $qualityStrategy = $factory->getQualityOperationsStrategy();
+        $strategy = UpdateItemStrategy::instance(new BasicFactory());
 
         foreach ($this->items as $item) {
-            $daysStrategy->execute($item);
-            $qualityStrategy->execute($item);
+            $strategy->execute($item);
         }
     }
 
