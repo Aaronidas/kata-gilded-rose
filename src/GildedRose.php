@@ -8,6 +8,8 @@
 
 namespace Kata;
 
+use Kata\Factory\BasicFactory;
+
 class GildedRose
 {
     private $items;
@@ -16,7 +18,19 @@ class GildedRose
         $this->items = $items;
     }
 
-    function update_quality() {
+    function update_quality()
+    {
+        $factory = new BasicFactory();
+        $daysStrategy = $factory->getDaysOperationStrategy();
+        $qualityStrategy = $factory->getQualityOperationsStrategy();
+
+        foreach ($this->items as $item) {
+            $daysStrategy->execute($item);
+            $qualityStrategy->execute($item);
+        }
+    }
+
+    function update_quality_old() {
         foreach ($this->items as $item) {
             if ($item->name != 'Aged Brie' and $item->name != 'Backstage passes to a TAFKAL80ETC concert') {
                 if ($item->quality > 0) {

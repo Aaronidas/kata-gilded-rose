@@ -67,17 +67,17 @@ class GildedRoseTest extends TestCase {
         $this->assertEquals($quality + 1, $items[0]->quality);
     }
 
-//    /**
-//     * @test
-//     */
-//    public function given_more_than_50_quality_item_when_update_quality_then_set_50_quality()
-//    {
-//        $name = "Aged Brie";
-//        $sell_in = 10;
-//        $quality = 60;
-//        $items = $this->updateQuality($name, $sell_in, $quality);
-//        $this->assertEquals(50, $items[0]->quality);
-//    }
+    /**
+     * @test
+     */
+    public function given_more_than_50_quality_item_when_update_quality_then_set_50_quality()
+    {
+        $name = "Aged Brie";
+        $sell_in = 10;
+        $quality = 60;
+        $items = $this->updateQuality($name, $sell_in, $quality);
+        $this->assertEquals(50, $items[0]->quality);
+    }
 
     /**
      * @test
