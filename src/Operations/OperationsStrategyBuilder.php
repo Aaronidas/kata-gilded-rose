@@ -17,6 +17,7 @@ class OperationsStrategyBuilder
         $operations['Aged Brie'] = new IncreaseOperation();
         $operations['Sulfuras, Hand of Ragnaros'] = new VoidOperation();
         $operations['Backstage passes to a TAFKAL80ETC concert'] = new BackstageOperation();
+        $operations['Conjured Mana Cake'] = new DoubleDecreaseOperation();
         $operations['default'] = new DefaultOperation();
 
         return new OperationsStrategy($operations);

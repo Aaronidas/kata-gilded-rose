@@ -122,6 +122,16 @@ class GildedRoseTest extends TestCase {
         $this->assertEquals($quality + 3, $items[0]->quality);
     }
 
+    /** @test */
+    public function given_conjured_item_when_update_then_double_decrease()
+    {
+        $name = "Conjured Mana Cake";
+        $sell_in = 10;
+        $quality = 30;
+        $items = $this->updateQuality($name, $sell_in, $quality);
+        $this->assertEquals($quality - 2, $items[0]->quality);
+    }
+
     /**
      * @param $name
      * @param $sell_in
