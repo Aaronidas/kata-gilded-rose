@@ -8,11 +8,11 @@
 
 namespace Kata\QualityCommands;
 
-use Kata\Item\Item;
+use Kata\Item\ItemFacade;
 
-class VoidQualityCommand extends AbstractQualityCommand
+class VoidQualityCommand implements QualityCommand
 {
-    public function execute(Item $item)
+    public function execute(ItemFacade $item)
     {
         // void
     }

@@ -8,7 +8,7 @@
 
 namespace Kata\QualityCommands;
 
-use Kata\Item\Item;
+use Kata\Item\ItemFacade;
 
 class QualityStrategy
 {
@@ -22,10 +22,10 @@ class QualityStrategy
         $this->operations = $operations;
     }
 
-    public function execute(Item $item)
+    public function execute(ItemFacade $item)
     {
-        if (array_key_exists($item->name, $this->operations)) {
-            $this->operations[$item->name]->execute($item);
+        if (array_key_exists($item->getName(), $this->operations)) {
+            $this->operations[$item->getName()]->execute($item);
         } else {
             $this->operations['default']->execute($item);
         }

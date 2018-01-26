@@ -8,15 +8,15 @@
 
 namespace Kata\QualityCommands;
 
-use Kata\Item\Item;
+use Kata\Item\ItemFacade;
 
-class DefaultQualityCommand extends AbstractQualityCommand
+class DefaultQualityCommand implements QualityCommand
 {
-    public function execute(Item $item)
+    public function execute(ItemFacade $item)
     {
-        $this->updateQuality($item, $item->quality - 1);
-        if ($item->sell_in <= 0) {
-            $this->updateQuality($item, $item->quality - 1);
+        $item->updateQuality($item->getQuality() - 1);
+        if ($item->getSellIn() <= 0) {
+            $item->updateQuality($item->getQuality() - 1);
         }
     }
 }

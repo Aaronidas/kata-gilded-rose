@@ -8,25 +8,25 @@
 
 namespace Kata\QualityCommands;
 
-use Kata\Item\Item;
+use Kata\Item\ItemFacade;
 
-class BackstageQualityCommand extends AbstractQualityCommand
+class BackstageQualityCommand implements QualityCommand
 {
-    public function execute(Item $item)
+    public function execute(ItemFacade $item)
     {
-        if ($item->sell_in <= 0) {
-            $this->updateQuality($item, 0);
+        if ($item->getSellIn() <= 0) {
+            $item->updateQuality(0);
             return;
         }
 
-        $this->updateQuality($item, $item->quality + 1);
+        $item->updateQuality($item->getQuality() + 1);
 
-        if ($item->sell_in <= 10) {
-            $this->updateQuality($item, $item->quality + 1);
+        if ($item->getSellIn() <= 10) {
+            $item->updateQuality($item->getQuality() + 1);
         }
 
-        if ($item->sell_in <= 5) {
-            $this->updateQuality($item, $item->quality + 1);
+        if ($item->getSellIn() <= 5) {
+            $item->updateQuality($item->getQuality() + 1);
         }
     }
 }

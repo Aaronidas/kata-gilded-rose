@@ -9,6 +9,7 @@
 namespace Kata;
 
 use Kata\Factory\BasicFactory;
+use Kata\Item\ItemFacade;
 
 class GildedRose
 {
@@ -25,8 +26,9 @@ class GildedRose
         $qualityStrategy = $factory->getQualityOperationsStrategy();
 
         foreach ($this->items as $item) {
-            $daysStrategy->execute($item);
-            $qualityStrategy->execute($item);
+            $facade = new ItemFacade($item);
+            $daysStrategy->execute($facade);
+            $qualityStrategy->execute($facade);
         }
     }
 

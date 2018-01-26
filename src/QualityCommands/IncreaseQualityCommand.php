@@ -8,12 +8,12 @@
 
 namespace Kata\QualityCommands;
 
-use Kata\Item\Item;
+use Kata\Item\ItemFacade;
 
-class IncreaseQualityCommand extends AbstractQualityCommand
+class IncreaseQualityCommand implements QualityCommand
 {
-    public function execute(Item $item)
+    public function execute(ItemFacade $item)
     {
-        $this->updateQuality($item, $item->quality + 1);
+        $item->updateQuality($item->getQuality() + 1);
     }
 }

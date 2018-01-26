@@ -8,11 +8,11 @@
 
 namespace Kata\DayCommands;
 
-use Kata\Item\Item;
+use Kata\Item\ItemFacade;
 
 class VoidDayCommand implements DayCommand
 {
-    public function execute(Item $item)
+    public function execute(ItemFacade $item)
     {
         // void
     }
